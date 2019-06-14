@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Source/.vs/Gateway/v15
+/Source/Gateway.ApiComposition/bin
+/Source/Gateway.ApiComposition/obj
+/Source/Gateway.Composition/bin
+/Source/Gateway.Composition/obj
+/Source/Gateway.Contracts/bin
+/Source/Gateway.Contracts/obj
+/Source/Gateway.Controlles.BoundedContext/bin
+/Source/Gateway.Controlles.BoundedContext/obj
+/Source/Gateway.Coordination/bin
+/Source/Gateway.Coordination/obj
+/Source/Gateway.Host/bin
+/Source/Gateway.Host/obj
+/Source/packages
