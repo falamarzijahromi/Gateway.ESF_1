@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="autofac" Version="4.9.2" />
+    <PackageReference Include="autofac.extras.dynamicproxy" Version="4.5.0" />
+    <PackageReference Include="composition.esf_1" Version="1.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gateway.Composition\Gateway.Compositioning.csproj" />
+  </ItemGroup>
+
+</Project>

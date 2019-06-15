@@ -17,3 +17,6 @@
 /Source/Gateway.Host/bin
 /Source/Gateway.Host/obj
 /Source/packages
+/Source/.vs/config
+/Source/Gateway.Host.Composition/bin
+/Source/Gateway.Host.Composition/obj

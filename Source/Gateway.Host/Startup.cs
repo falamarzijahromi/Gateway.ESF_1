@@ -1,9 +1,14 @@
-﻿using Gateway.Compositioning;
+﻿using System.Collections.Generic;
+using Autofac;
+using Gateway.Compositioning;
+using Gateway.Host.Composition;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Gateway.Host
 {
@@ -21,6 +26,19 @@ namespace Gateway.Host
             services.AddMvc()
                 .AddGatewayApplicationParts()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSingleton<ILoggerFactory, LoggerFactory>(sp =>
+                new LoggerFactory(
+                    sp.GetRequiredService<IEnumerable<ILoggerProvider>>(),
+                    sp.GetRequiredService<IOptionsMonitor<LoggerFilterOptions>>()
+                )
+            );
+
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterDependecies();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

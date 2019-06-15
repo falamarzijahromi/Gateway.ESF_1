@@ -7,11 +7,11 @@ using Gateway.ApiContracts.BoundedContext.Dtos;
 
 namespace Gateway.ApiComposition.BoundedContext
 {
-    public class BoundedContextComposition : IBoundedContextCompositiong
+    public class BoundedContextCompositor : IBoundedContextCompositiong
     {
         private readonly IQuery1 query1;
 
-        public BoundedContextComposition(IQuery1 query1)
+        public BoundedContextCompositor(IQuery1 query1)
         {
             this.query1 = query1;
         }
@@ -19,7 +19,7 @@ namespace Gateway.ApiComposition.BoundedContext
         public List<SomethingDto> GetSomethings()
         {
             return query1.GetSomethings()
-                .Select(smt => SomethingDtoFactory.ConvertToGatewayContract(smt))
+                .Select(SomethingDtoFactory.ConvertToGatewayContract)
                 .ToList();
         }
     }
