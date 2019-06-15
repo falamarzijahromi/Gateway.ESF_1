@@ -1,5 +1,4 @@
-﻿using System;
-using Composition.ESF_1;
+﻿using Composition.ESF_1;
 using Gateway.ApiComposition;
 using Gateway.ApiCoordination;
 using Gateway.Compositioning.Factories;
