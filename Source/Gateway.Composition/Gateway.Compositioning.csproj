@@ -52,7 +52,6 @@
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Factories\ContractServices.cs" />
     <Compile Include="Factories\ProxyFactory.cs" />
-    <Compile Include="MvcBuilderExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

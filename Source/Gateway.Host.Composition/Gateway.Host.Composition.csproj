@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gateway.Composition\Gateway.Compositioning.csproj" />
+    <ProjectReference Include="..\Gateway.Controlles.BoundedContext\Gateway.ApiController2.BoundedContext.csproj" />
   </ItemGroup>
 
 </Project>
