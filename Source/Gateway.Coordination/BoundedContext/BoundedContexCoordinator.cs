@@ -1,11 +1,12 @@
 ﻿using BoundedContext.Contracts.Command.Service1;
 using Coordination.ESF_1;
+using Gateway.ApiContracts.BoundedContext.Coordination;
 using Gateway.ApiContracts.BoundedContext.Dtos;
 using Gateway.ApiCoordination.BoundedContext.Factories;
 
 namespace Gateway.ApiCoordination.BoundedContext
 {
-    public class BoundedContexCoordinator
+    public class BoundedContexCoordinator : IBoundedContextCoordinator
     {
         private readonly IService1 service1;
 
@@ -19,8 +20,8 @@ namespace Gateway.ApiCoordination.BoundedContext
             using (DirectScope.Begin())
                 DirectRegisterSomething(registrationDto);
 
-            using (IndirectScope.Begin())
-                IndirectRegisterSomething(registrationDto);
+            //using (IndirectScope.Begin())
+            //    IndirectRegisterSomething(registrationDto);
         }
 
         private void DirectRegisterSomething(SomethingRegistrationDto registrationDto)

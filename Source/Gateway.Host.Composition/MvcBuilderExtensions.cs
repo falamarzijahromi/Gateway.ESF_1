@@ -1,4 +1,4 @@
-﻿using Gateway.ApiController2.BoundedContext.Query;
+﻿using Gateway.ApiController.BoundedContext.Query;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Gateway.Host.Composition

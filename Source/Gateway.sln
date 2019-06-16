@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiCoordination", "ApiCoord
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.ApiComposition", "Gateway.ApiComposition\Gateway.ApiComposition.csproj", "{67C6943B-10AE-4032-A366-EAEDA7A08B98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.ApiController2.BoundedContext", "Gateway.Controlles.BoundedContext\Gateway.ApiController2.BoundedContext.csproj", "{F09091C5-9C17-4A6B-B2AA-DF223652B014}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.ApiController.BoundedContext", "Gateway.Controlles.BoundedContext\Gateway.ApiController.BoundedContext.csproj", "{F09091C5-9C17-4A6B-B2AA-DF223652B014}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gateway.Compositioning", "Gateway.Composition\Gateway.Compositioning.csproj", "{30A21E4D-8F40-412C-A88C-3EC504A8ABC1}"
 EndProject

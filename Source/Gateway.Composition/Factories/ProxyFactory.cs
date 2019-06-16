@@ -11,5 +11,19 @@ namespace Gateway.Compositioning.Factories
 
             return channelFactory.CreateConnectedChannel(isTransactional: false);
         }
+
+        public static object CreateConnectedCommandProxy(Type type)
+        {
+            var channelFactory = new ChannelFactory(type);
+
+            return channelFactory.CreateConnectedChannel(isTransactional: true);
+        }
+
+        public static object CreateDisconnectedCommandProxy(Type type)
+        {
+            var channelFactory = new ChannelFactory(type);
+
+            return channelFactory.CreateDisconnectedChannel();
+        }
     }
 }

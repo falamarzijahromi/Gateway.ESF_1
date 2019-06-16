@@ -3,7 +3,7 @@ using Gateway.ApiContracts.BoundedContext.Composition;
 using Gateway.ApiContracts.BoundedContext.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gateway.ApiController2.BoundedContext.Query
+namespace Gateway.ApiController.BoundedContext.Query
 {
     [Route("api/boundedContext")]
     [ApiController]
