@@ -8,10 +8,4 @@
     <ProjectReference Include="..\Gateway.Contracts\Gateway.ApiContracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="BoundedContext.Contracts">
-      <HintPath>..\..\..\BoundedContext\Source\BoundedContext.Composition\bin\Debug\netstandard2.0\BoundedContext.Contracts.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

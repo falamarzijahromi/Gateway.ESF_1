@@ -1,4 +1,4 @@
-﻿using BoundedContext.Contracts.Command.Service1;
+﻿//using BoundedContext.Contracts.Command.Service1;
 using Coordination.ESF_1;
 using Gateway.ApiContracts.BoundedContext.Coordination;
 using Gateway.ApiContracts.BoundedContext.Dtos;
@@ -8,30 +8,30 @@ namespace Gateway.ApiCoordination.BoundedContext
 {
     public class BoundedContexCoordinator : IBoundedContextCoordinator
     {
-        private readonly IService1 service1;
+        //private readonly IService1 service1;
 
-        public BoundedContexCoordinator(IService1 service1)
-        {
-            this.service1 = service1;
-        }
+        //public BoundedContexCoordinator(IService1 service1)
+        //{
+        //    this.service1 = service1;
+        //}
 
         public void RegisterSomething(SomethingRegistrationDto registrationDto)
         {
-            using (DirectScope.Begin())
-                DirectRegisterSomething(registrationDto);
+            //using (DirectScope.Begin())
+            //    DirectRegisterSomething(registrationDto);
 
             //using (IndirectScope.Begin())
             //    IndirectRegisterSomething(registrationDto);
         }
 
-        private void DirectRegisterSomething(SomethingRegistrationDto registrationDto)
-        {
-            service1.RegisterSomething(SomethingRegistrationFactory.ConvertFromRegistrationDto(registrationDto));
-        }
+        //private void DirectRegisterSomething(SomethingRegistrationDto registrationDto)
+        //{
+        //    service1.RegisterSomething(SomethingRegistrationFactory.ConvertFromRegistrationDto(registrationDto));
+        //}
 
-        private void IndirectRegisterSomething(SomethingRegistrationDto registrationDto)
-        {
-            service1.RegisterSomething(SomethingRegistrationFactory.ConvertFromRegistrationDto(registrationDto));
-        }
+        //private void IndirectRegisterSomething(SomethingRegistrationDto registrationDto)
+        //{
+        //    service1.RegisterSomething(SomethingRegistrationFactory.ConvertFromRegistrationDto(registrationDto));
+        //}
     }
 }
