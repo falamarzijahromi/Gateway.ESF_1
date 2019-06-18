@@ -27,8 +27,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiContract", "ApiContract"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.ApiContracts", "Gateway.Contracts\Gateway.ApiContracts.csproj", "{0FDC2ED1-C96E-4F56-95DF-5C7F8DA85247}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gateway.Host.Composition", "Gateway.Host.Composition\Gateway.Host.Composition.csproj", "{0F038EB0-1B8D-4BCE-B3F0-2CB4184B7784}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +57,6 @@ Global
 		{0FDC2ED1-C96E-4F56-95DF-5C7F8DA85247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FDC2ED1-C96E-4F56-95DF-5C7F8DA85247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FDC2ED1-C96E-4F56-95DF-5C7F8DA85247}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F038EB0-1B8D-4BCE-B3F0-2CB4184B7784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F038EB0-1B8D-4BCE-B3F0-2CB4184B7784}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F038EB0-1B8D-4BCE-B3F0-2CB4184B7784}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F038EB0-1B8D-4BCE-B3F0-2CB4184B7784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,7 +68,6 @@ Global
 		{30A21E4D-8F40-412C-A88C-3EC504A8ABC1} = {848C706C-4AE9-46E6-8111-872452B34307}
 		{B935E411-5D01-4D9E-9FD3-8FBE3B233B54} = {E8C18F31-CAAC-44E3-9247-8CF28E2D9D59}
 		{0FDC2ED1-C96E-4F56-95DF-5C7F8DA85247} = {19373B3F-AA3B-42EC-A5C9-8E45DF21A940}
-		{0F038EB0-1B8D-4BCE-B3F0-2CB4184B7784} = {5B1D778F-3480-49E5-8B2A-1AA812CF7A58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D25B7A35-1034-4A86-AF89-EDE7055937C2}

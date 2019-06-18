@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="autofac" Version="4.9.2" />
     <PackageReference Include="autofac.extensions.dependencyinjection" Version="4.4.0" />
+    <PackageReference Include="autofac.extras.dynamicproxy" Version="4.5.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />
@@ -17,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gateway.Composition\Gateway.Compositioning.csproj" />
-    <ProjectReference Include="..\Gateway.Host.Composition\Gateway.Host.Composition.csproj" />
+    <ProjectReference Include="..\Gateway.Controlles.BoundedContext\Gateway.ApiController.BoundedContext.csproj" />
   </ItemGroup>
 
 </Project>
