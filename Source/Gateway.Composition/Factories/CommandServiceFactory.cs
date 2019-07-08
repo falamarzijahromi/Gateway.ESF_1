@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using DynamicTypeGenerator;
+﻿using DynamicTypeGenerator;
 using Gateway.Compositioning.Abstracts;
 using Gateway.Compositioning.Implementations;
+using System;
+using System.Collections.Generic;
 
 namespace Gateway.Compositioning.Factories
 {
@@ -28,7 +28,8 @@ namespace Gateway.Compositioning.Factories
             var serviceObjectTypeBuilder = DynamicTypeBuilderFactory.CreateClassBuilder(
                 $"{serviceType}_Dispatcher",
                 new Dictionary<string, Type>(),
-                new[] { serviceType, typeof(IDisposable)});
+                null,
+                 serviceType, typeof(IDisposable));
 
             var serviceObjectType = serviceObjectTypeBuilder.Build();
 

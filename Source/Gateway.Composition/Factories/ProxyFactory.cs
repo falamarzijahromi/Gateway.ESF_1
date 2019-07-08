@@ -1,5 +1,6 @@
 ﻿using System;
 using DynamicWcfServiceHost.Proxy;
+using Gateway.Compositioning.Implementations;
 
 namespace Gateway.Compositioning.Factories
 {
@@ -9,21 +10,21 @@ namespace Gateway.Compositioning.Factories
         {
             var channelFactory = new ChannelFactory(type);
 
-            return channelFactory.CreateConnectedChannel(isTransactional: false);
+            return channelFactory.CreateConnectedChannel(new TypeCacher(), isTransactional: false);
         }
 
         public static object CreateConnectedCommandProxy(Type type)
         {
             var channelFactory = new ChannelFactory(type);
 
-            return channelFactory.CreateConnectedChannel(isTransactional: true);
+            return channelFactory.CreateConnectedChannel(new TypeCacher(), isTransactional: true);
         }
 
         public static object CreateDisconnectedCommandProxy(Type type)
         {
             var channelFactory = new ChannelFactory(type);
 
-            return channelFactory.CreateDisconnectedChannel();
+            return channelFactory.CreateDisconnectedChannel(new TypeCacher());
         }
     }
 }
