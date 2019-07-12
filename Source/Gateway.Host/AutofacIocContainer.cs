@@ -57,7 +57,10 @@ namespace Gateway.Host
             RegisterInterceptors(interceptorTypes, builder);
         }
 
-        public void RegisterFactoryTransient(Type[] serviceTypes, Func<IResolver, object> serviceFactory, Type[] interceptors = null)
+        public void RegisterFactoryTransient(
+            Type[] serviceTypes, 
+            Func<IResolver, object> serviceFactory, 
+            Type[] interceptors = null)
         {
             var builder = containerBuilder.Register(c => serviceFactory.Invoke(new AutofacResolver(c)));
 
@@ -67,6 +70,31 @@ namespace Gateway.Host
             }
 
             RegisterInterceptors(interceptors, builder);
+        }
+
+        public void RegisterFactoryPerGraph(
+            Type[] serviceTypes, 
+            Func<IResolver, object> serviceFactory, 
+            Type[] interceptors = null)
+        {
+            var builder = containerBuilder
+                .Register(c => serviceFactory.Invoke(new AutofacResolver(c)))
+                .InstancePerLifetimeScope();
+
+            foreach (var serviceType in serviceTypes)
+            {
+                builder.As(serviceType);
+            }
+
+            RegisterInterceptors(interceptors, builder);
+        }
+
+        public void RegisterSingleton(Type implementationType, object instance)
+        {
+            containerBuilder
+                .Register(c => instance)
+                .As(implementationType)
+                .SingleInstance();
         }
 
         public IContainer CreateContainer()

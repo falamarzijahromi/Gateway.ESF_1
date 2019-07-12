@@ -20,3 +20,5 @@
 /Source/.vs/config
 /Source/Gateway.Host.Composition/bin
 /Source/Gateway.Host.Composition/obj
+/Source/Gateway.Host/Properties/PublishProfiles
+/Source/Gateway.Host/Gateway.Host.csproj.user

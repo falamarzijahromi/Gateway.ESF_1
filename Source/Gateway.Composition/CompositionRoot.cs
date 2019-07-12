@@ -1,4 +1,5 @@
 ﻿using Composition.ESF_1;
+using DynamicServiceHost.Matcher;
 using Gateway.ApiComposition;
 using Gateway.ApiCoordination;
 using Gateway.Compositioning.Abstracts;
@@ -12,11 +13,23 @@ namespace Gateway.Compositioning
     {
         public static void RegisterDependecies(IIocContainer container)
         {
+            RegisterOptimizations(container);
+
             RegisterContractServices(container);
 
             RegisterCoordinators(container);
 
             RegisterCompositors(container);
+        }
+
+        private static void RegisterOptimizations(IIocContainer container)
+        {
+            var moduleBuilder = ModuleBuilderProvider.GetModuleBuilder();
+            var typeContainer = new TypeGlobalContainer();
+
+            var optimizationPackage = new OptimizationPackage(moduleBuilder, typeContainer);
+
+            container.RegisterSingleton(typeof(IOptimizationPackage), optimizationPackage);
         }
 
         private static void RegisterContractServices(IIocContainer container)
@@ -38,8 +51,9 @@ namespace Gateway.Compositioning
 
             container.RegisterAllServicesFactoryTransient((r, type) =>
             {
+                var optPack = r.Resolver(typeof(IOptimizationPackage)) as IOptimizationPackage;
                 var proxyContainer = r.Resolver(typeof(IProxyContainer)) as IProxyContainer;
-                return CommandServiceFactory.CreateCommandService(type, proxyContainer);
+                return CommandServiceFactory.CreateCommandService(type, proxyContainer, optPack);
             }, commandContracts);
         }
 
@@ -49,7 +63,11 @@ namespace Gateway.Compositioning
 
             var queryContracts = ContractServices.GetAllServices(".Contracts", "Query");
 
-            container.RegisterAllServicesFactoryTransient((r, type) => ProxyFactory.CreateQueryProxy(type), queryContracts);
+            container.RegisterAllServicesFactoryTransient((r, type) =>
+            {
+                var optPack = (IOptimizationPackage) r.Resolver(typeof(IOptimizationPackage));
+                return ProxyFactory.CreateQueryProxy(type, optPack);
+            }, queryContracts);
         }
 
         private static void RegisterCompositors(IIocContainer container)

@@ -4,20 +4,20 @@ using System.Reflection.Emit;
 
 namespace Gateway.Compositioning.Factories
 {
-    public class ModuleBuilderProvider
+    public static class ModuleBuilderProvider
     {
-        private readonly ModuleBuilder moduleBuilder;
+        private static readonly ModuleBuilder moduleBuilder;
 
-        public ModuleBuilderProvider()
+        static ModuleBuilderProvider()
         {
-            var asmName = new AssemblyName("DyniamcProxyContainerAssembly");
+            var asmName = new AssemblyName("AssemblyForContainers");
 
-            var asm = AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.Run);
+            var asm = AppDomain.CurrentDomain.DefineDynamicAssembly(asmName, AssemblyBuilderAccess.RunAndSave);
 
-            moduleBuilder = asm.DefineDynamicModule("DynamicModuleForProxies");
+            moduleBuilder = asm.DefineDynamicModule("AssemblyForContainers");
         }
 
-        public ModuleBuilder GetModuleBuilder()
+        public static ModuleBuilder GetModuleBuilder()
         {
             return moduleBuilder;
         }
